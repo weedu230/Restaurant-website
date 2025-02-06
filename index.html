@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-header">
+          <h1>Login</h1>
+          <p>Please login to your account</p>
+        </div>
+        <form class="login-form" onsubmit="handleLogin(event)">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="text" id="email" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+          </div>
+          <div class="form-options">
+            <label>
+              <input type="checkbox" name="remember"> Remember Me
+            </label>
+            <a href="#" class="forgot-password">Forgot Password?</a>
+          </div>
+          <div class="btn-group">
+            <button type="submit">Login</button>
+          </div>
+        </form>
+      </div>
+    
+      <script>
+        function handleLogin(event) {
+          event.preventDefault(); // Prevents default form submission behavior
+          const email = document.getElementById('email').value;
+          const password = document.getElementById('password').value;
+    
+          if (email && password) {
+            // Replace this alert with your backend authentication logic
+            alert('Login successful!');
+            window.location.href = 'landingpage.html'; // Redirect to landing page
+          } else {
+            alert('Please fill out all fields!');
+          }
+        }
+      </script>
+</body>
+</html>

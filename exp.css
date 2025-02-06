@@ -1,0 +1,61 @@
+/* General Page Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: black;
+
+}
+
+/* Header Styles */
+h1 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    color: whitesmoke;
+    
+}
+
+p1{
+    font-size: 1.2rem;
+    margin: 10px 0 30px;
+    color:goldenrod;
+}
+
+/* Image Grid Styles */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two images per row */
+    gap: 15px; /* Spacing between images */
+    max-width: 600px;
+    margin: 0 auto; /* Center the grid */
+    padding: 20px;
+}
+
+.image-grid img {
+    width: 100%; /* Ensure images take full cell width */
+    height: auto;
+    border-radius: 10px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Image shadow */
+    transition: transform 0.3s ease;
+}
+
+.image-grid img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Button Styles */
+.button-container {
+    margin: 30px;
+    color: #FFAB00;
+    text-decoration-line: none;
+}
+.button-container :hover
+{
+    color:whitesmoke;
+    transform: scale(1.05);
+    background-color: #FFAB00;
+    text-decoration-line: none;
+}
+
+
