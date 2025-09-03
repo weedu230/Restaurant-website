@@ -4,7 +4,8 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color: black;
+    background: linear-gradient(135deg, #ff6600 0%, #ffaa00 50%, #66cc00 100%);
+    min-height: 100vh;
 
 }
 
@@ -12,14 +13,25 @@ body {
 h1 {
     font-size: 2.5rem;
     margin: 20px 0;
-    color: whitesmoke;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 102, 0, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    display: inline-block;
     
 }
 
 p1{
     font-size: 1.2rem;
     margin: 10px 0 30px;
-    color:goldenrod;
+    color: white;
+    background: rgba(102, 204, 0, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    display: inline-block;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* Image Grid Styles */
@@ -36,7 +48,8 @@ p1{
     width: 100%; /* Ensure images take full cell width */
     height: auto;
     border-radius: 10px; /* Optional: Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Image shadow */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Optional: Image shadow */
+    border: 3px solid #ffaa00;
     transition: transform 0.3s ease;
 }
 
@@ -119,4 +132,35 @@ p1{
         padding: 12px;
         font-size: 14px;
     }
+}
+
+.image-grid img:hover {
+    transform: scale(1.05);
+    border-color: #66cc00;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.button-container button {
+    background: linear-gradient(45deg, #ff6600, #ffaa00);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+.button-container button:hover {
+    background: linear-gradient(45deg, #66cc00, #99dd00);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.button-container button a {
+    color: white;
+    text-decoration: none;
 }

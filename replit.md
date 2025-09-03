@@ -33,6 +33,7 @@ A responsive restaurant website featuring Pakistani cuisine with multiple pages 
 - ✅ Made navigation mobile-friendly
 - ✅ Configured development and production servers
 - ✅ Set up deployment configuration
+- ✅ Updated explore page with vibrant orange, yellow, and green color theme
 
 ## Architecture
 - Frontend: HTML5, CSS3, Vanilla JavaScript
