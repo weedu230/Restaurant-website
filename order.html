@@ -3,54 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Page</title>
+    <title>Place Your Order - Pakistani Restaurant</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+        * {
             margin: 0;
             padding: 0;
-            background-image: url(ll.jfif);
-            background-position: center;
+            box-sizing: border-box;
         }
-        .container {
-            width: 100%;
-            max-width: 600px;
-            margin: 50px auto;
-            background-color: #fff;
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
+            color: #ecf0f1;
+            min-height: 100vh;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
+        .header {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(45deg, #e74c3c, #f39c12);
+            margin: 0 0 30px 0;
+            color: white;
+            font-size: 2.2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #95a5a6, #7f8c8d);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .back-btn:hover {
+            background: linear-gradient(45deg, #7f8c8d, #95a5a6);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(127, 140, 141, 0.3);
+        }
+
         h2 {
             text-align: center;
-            color: #333;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
         }
+
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 25px;
         }
+
         label {
-            font-size: 14px;
-            color: #333;
-        }
-        input, select {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #28a745;
-            border: none;
-            border-radius: 5px;
-            color: white;
+            display: block;
             font-size: 16px;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-weight: bold;
         }
-        button:hover {
-            background-color: #218838;
+
+        input, select, textarea {
+            width: 100%;
+            padding: 15px;
+            margin-top: 5px;
+            border: 2px solid #bdc3c7;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: #ecf0f1;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #e74c3c;
+            background: white;
+            box-shadow: 0 0 10px rgba(231, 76, 60, 0.2);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #e74c3c, #f39c12);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(45deg, #c0392b, #d68910);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Success Message Styles */
+        .success-message {
+            display: none;
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+            animation: slideIn 0.5s ease;
+        }
+
+        .error-message {
+            display: none;
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Popup Styles */
@@ -61,121 +165,248 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.7);
             justify-content: center;
             align-items: center;
             z-index: 999;
         }
+
         .popup-content {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
             text-align: center;
-            width: 300px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            animation: popupSlide 0.5s ease;
         }
+
+        @keyframes popupSlide {
+            from {
+                opacity: 0;
+                transform: scale(0.7);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
         .popup-content h3 {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            color: #f39c12;
         }
+
+        .popup-content p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
         .close-btn {
-            padding: 10px 20px;
-            background-color: #ff0000;
+            padding: 12px 25px;
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 25px;
             cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
         }
+
         .close-btn:hover {
-            background-color: #cc0000;
+            background: linear-gradient(45deg, #2ecc71, #27ae60);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+        }
+
+        .quantity-info {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .header {
+                font-size: 1.8rem;
+                padding: 20px;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            .popup-content {
+                padding: 30px 20px;
+            }
         }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <h2>Place Your Order</h2>
-    <form   
-    id="orderForm" onsubmit="return handleSubmit(event)">
-        
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-        </div>
-
-        <div class="form-group">
-            <label for="dish name">Dish Name</label>
-            <input type="text" id="Dish Name" name="dish name" placeholder="Enter Dish name" required>
-        </div>
-
-        <div class="form-group">
-            <label for="address">Delivery Address</label>
-            <input type="text" id="address" name="address" placeholder="Enter your delivery address" required>
-        </div>
-
-        <div class="form-group">
-            <label for="quantity">Quantity (1000 per plate)</label>
-            <input type="number" id="quantity" name="quantity" placeholder="Enter quantity" required min="1">
-        </div>
-
-        <button type="submit">Place Order</button>
-    </form>
-</div>
-
-<div id="popup">
-    <div class="popup-content">
-        <h3>Your order has been placed!</h3>
-      <a href="landingpage.html"><button class="close-btn" onclick="closePopup()">Close</button></a> 
+    <div class="header">
+        🍽️ PLACE YOUR ORDER 🍽️
     </div>
-</div>
 
-<script>
-    function handleSubmit(event) {
-        event.preventDefault(); // Prevent the form from submitting
-        // You can process the form data here (e.g., send it to the server)
+    <div class="container">
+        <a href="menu.html" class="back-btn">← Back to Menu</a>
+        
+        <div id="statusMessage" class="success-message"></div>
+        <div id="errorMessage" class="error-message"></div>
+        
+        <h2>Order Details</h2>
+        
+        <form id="orderForm">
+            <div class="form-group">
+                <label for="email">📧 Your Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+            </div>
 
-        // Show the popup after the order is placed
-        document.getElementById("popup").style.display = "flex";
-    }
+            <div class="form-group">
+                <label for="fullName">👤 Full Name</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+            </div>
 
-    function closePopup() {
-        document.getElementById("popup").style.display = "none";
-    }
-    submit.form();
-</script>
-<script>
-    const form = document.getElementById("orderForm");
-    const statusMessage = document.getElementById("statusMessage");
+            <div class="form-group">
+                <label for="phone">📱 Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
 
-    form.addEventListener("submit", async function (event) {
-        event.preventDefault();
+            <div class="form-group">
+                <label for="dishName">🍽️ Dish Name</label>
+                <input type="text" id="dishName" name="dishName" placeholder="Enter the dish name you want to order" required>
+            </div>
 
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
-        const jsonPayload = JSON.stringify(data);
+            <div class="form-group">
+                <label for="address">🏠 Delivery Address</label>
+                <textarea id="address" name="address" placeholder="Enter your complete delivery address" rows="3" required></textarea>
+            </div>
 
-        try {
-            const response = await fetch("https://formspree.io/f/meoaegkd", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: jsonPayload,
-            });
+            <div class="form-group">
+                <label for="quantity">🍛 Quantity</label>
+                <input type="number" id="quantity" name="quantity" placeholder="Enter quantity" required min="1" value="1">
+                <div class="quantity-info">
+                    💰 Price: Rs. 1000 per plate
+                </div>
+            </div>
 
-            if (response.ok) {
-                statusMessage.textContent = "Order placed successfully!";
-                statusMessage.style.color = "green";
-                form.reset();
-            } else {
-                statusMessage.textContent = "Failed to place order. Please try again.";
-                statusMessage.style.color = "red";
+            <div class="form-group">
+                <label for="specialInstructions">📝 Special Instructions (Optional)</label>
+                <textarea id="specialInstructions" name="specialInstructions" placeholder="Any special instructions for your order?" rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">🛒 Place Order Now</button>
+        </form>
+    </div>
+
+    <!-- Success Popup -->
+    <div id="popup">
+        <div class="popup-content">
+            <h3>🎉 Order Placed Successfully!</h3>
+            <p>Thank you for choosing our restaurant! We'll contact you shortly to confirm your order.</p>
+            <p><strong>Estimated Delivery:</strong> 30-45 minutes</p>
+            <a href="landingpage.html" class="close-btn">Go to Homepage</a>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById("orderForm");
+        const statusMessage = document.getElementById("statusMessage");
+        const errorMessage = document.getElementById("errorMessage");
+        const popup = document.getElementById("popup");
+
+        // Calculate total price
+        const quantityInput = document.getElementById("quantity");
+        const quantityInfo = document.querySelector(".quantity-info");
+        
+        quantityInput.addEventListener("input", function() {
+            const quantity = parseInt(this.value) || 1;
+            const total = quantity * 1000;
+            quantityInfo.innerHTML = `💰 Price: Rs. ${total} (${quantity} × Rs. 1000)`;
+        });
+
+        form.addEventListener("submit", async function (event) {
+            event.preventDefault();
+            
+            // Hide previous messages
+            statusMessage.style.display = "none";
+            errorMessage.style.display = "none";
+            
+            // Get form data
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Add calculated total to data
+            data.total = (parseInt(data.quantity) || 1) * 1000;
+            
+            const jsonPayload = JSON.stringify(data);
+
+            try {
+                // Show loading state
+                const submitBtn = document.querySelector(".submit-btn");
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = "Processing...";
+                submitBtn.disabled = true;
+
+                const response = await fetch("https://formspree.io/f/meoaegkd", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: jsonPayload,
+                });
+
+                // Reset button
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+
+                if (response.ok) {
+                    // Show success popup
+                    popup.style.display = "flex";
+                    form.reset();
+                    quantityInfo.innerHTML = "💰 Price: Rs. 1000 per plate";
+                } else {
+                    errorMessage.textContent = "❌ Failed to place order. Please try again or contact us directly.";
+                    errorMessage.style.display = "block";
+                }
+            } catch (error) {
+                // Reset button
+                document.querySelector(".submit-btn").textContent = "🛒 Place Order Now";
+                document.querySelector(".submit-btn").disabled = false;
+                
+                errorMessage.textContent = "❌ An error occurred. Please check your internet connection and try again.";
+                errorMessage.style.display = "block";
+                console.error("Error:", error);
             }
-        } catch (error) {
-            statusMessage.textContent = "An error occurred. Please try again later.";
-            statusMessage.style.color = "red";
-            console.error("Error:", error);
-        }
-    });
-</script>
+        });
 
+        // Close popup when clicking outside
+        popup.addEventListener("click", function(event) {
+            if (event.target === popup) {
+                popup.style.display = "none";
+            }
+        });
+        
+        // Form validation feedback
+        const inputs = document.querySelectorAll('input[required], textarea[required]');
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (!this.value.trim()) {
+                    this.style.borderColor = '#e74c3c';
+                } else {
+                    this.style.borderColor = '#27ae60';
+                }
+            });
+        });
+    </script>
 </body>
 </html>

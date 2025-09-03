@@ -3,146 +3,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Restaurant Menu - Pakistani Cuisine</title>
     <style>
-        body {
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-image: url('https://example.com/menu-background.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed1;
-            color: orangered;
-        }
-        h1 {
-            text-align: center;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.7);
-            margin: 0;
-        }
-        .menu {
-            padding: 20px;
-        }
-        .menu div {
-            max-width: 800px;
-            margin: auto;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-        }
-        ol {
-            list-style-type: none;
             padding: 0;
+            box-sizing: border-box;
         }
-        h2 {
-            border-bottom: 2px solid white;
-            padding-bottom: 5px;
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
+            color: #ecf0f1;
+            min-height: 100vh;
+            padding: 20px;
         }
-        a
-        {
-            text-decoration-line: none;
-            color: aliceblue;
+
+        .header {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(45deg, #e74c3c, #f39c12);
+            margin: 0 0 30px 0;
+            color: white;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
         }
-        a :hover
-        {
-            color: yellow;
+
+        .menu-container {
+            max-width: 900px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .category {
+            margin-bottom: 40px;
+        }
+
+        .category h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #e74c3c;
+            padding: 15px 0 10px 0;
+            margin: 0 0 20px 0;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .menu-items {
+            display: grid;
+            gap: 12px;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 15px 20px;
+            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+            color: #2c3e50;
+            text-decoration: none;
+            border-radius: 10px;
+            border-left: 4px solid #e74c3c;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .menu-item:hover::before {
+            left: 100%;
+        }
+
+        .menu-item:hover {
+            background: linear-gradient(45deg, #e74c3c, #f39c12);
+            color: white;
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .back-btn:hover {
+            background: linear-gradient(45deg, #2ecc71, #27ae60);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .header {
+                font-size: 2rem;
+                padding: 20px;
+            }
+            
+            .menu-container {
+                padding: 20px;
+            }
+            
+            .category h2 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
-<body >
+<body>
+    <div class="header">
+        🍽️ AUTHENTIC PAKISTANI MENU 🍽️
+    </div>
     
-    <h1>MENU</h1>
-    
-    <div class="menu">
-      <div class="menu container">
-            <ol>
-                <h2>STARTER</h2>
-               <div>
-                <a href="order.html"><li>Soup</li></a>
-                <a href="order.html"><li>Papar</li></a>
-                <a href="order.html"><li>Bornvita</li></a>
-                <a href="order.html"><li>New dish</li></a>
-                <a href="order.html"><li>Mystery dish</li></a>
-                <a href="order.html"><li>Strange dish</li></a>
-               </div> 
-                <h2>KARAHI</h2>
-               <div>
-                <a href="order.html"><li>Chicken shahi karahi</li></a>
-                <a href="order.html"><li>Chicken white karahi</li></a>
-                <a href="order.html"><li>Chicken achari karahi</li></a>
-                <a href="order.html"><li>Chicken makhni karahi</li></a>
-                <a href="order.html"><li>Mutton karahi</li></a>
-                <a href="order.html"><li>Mutton white karahi</li></a>
-                <a href="order.html"><li>Mutton shahi karahi</li></a>
-                <a href="order.html"><li>Fish white karahi</li></a>
-               </div> 
-               <h2>RICE</h2>
-               <div>
-                <a href="order.html"><li>Chicken Biryani</li></a>
-                <a href="order.html"><li>Chicken Aloo Biryani</li></a>
-                <a href="order.html"><li>Mutton biryani</li></a>
-                <a href="order.html"><li>Mutton pulao</li></a>
-                <a href="order.html"> <li>Beef biryani</li></a>
-                <a href="order.html"> <li>Beef pulao</li></a>
-                <a href="order.html"> <li>Pakistani basmati rice</li></a>
-                <a href="order.html"> <li>Vegetable rice</li></a>
-                </div>
-                <h2>BAR B Q</h2>
-                <div>
-                    <a href="order.html"><li>Shuarma</li></a>
-                    <a href="order.html"><li>Chicken Roll</li></a>
-                    <a href="order.html"><li>Chicken tikka</li></a>
-                    <a href="order.html"><li>Seekh Kabab</li></a>
-                    <a href="order.html"><li>Mutton Chop</li></a>
-                    <a href="order.html"><li>Katakat</li></a>
-                    <a href="order.html"><li>Gola Kabab</li></a>
-                    <a href="order.html"><li>Malai Boti</li></a>
-                </div>
-                 <h2>FAST FOOD</h2>
-                <div>
-                    <a href="order.html"><li>Chicken burger</li></a>
-                    <a href="order.html"><li>Zinger burger</li></a>
-                    <a href="order.html"><li>Zinger roll</li></a></a>
-                    <a href="order.html"><li>Club sandwiches</li></a>
-                    <a href="order.html"><li>French fries</li></a>
-                    <a href="order.html"><li>Chicken nuggets</li></a>
-                    <a href="order.html"><li>Pizza fries</li></a>
-                    <a href="order.html"><li>Muthal burger</li></a>
-                </div>
-                <h2>NAAN</h2>
-                <div>
-                    <a href="order.html"><li>Sada roti</li></a>
-                    <a href="order.html"><li>Sada naan</li></a>
-                    <a href="order.html"><li>Roghini naan</li></a>
-                    <a href="order.html"><li>Chapati</li></a>
-                    <a href="order.html"><li>Chicken Tikka naan</li></a>
-                    <a href="order.html"><li>butter naan</li></a>
-                    <a href="order.html"><li>Tandori naan</li></a>
-                    <a href="order.html"><li>Garlic naan</li></a>
-                </div>
-                <h2>DESSERT</h2>
-                <div>
-                    <a href="order.html"><li>Gajar ka halwa</li></a>
-                    <a href="order.html"><li>Plain kheer</li></a>
-                    <a href="order.html"><li>Shahi kheer</li></a>
-                    <a href="order.html"><li>Shahi tukray</li></a>
-                    <a href="order.html"><li>Rasmalai</li></a>
-                    <a href="order.html"><li>Rabri</li></a>
-                    <a href="order.html"><li>Doodh dulari</li></a>
-                </div>
-                <h2>OTHER ITEM</h2>
-                <div>
-                    <a href="order.html"><li>Paani ki bottle</li></a>
-                    <a href="order.html"><li>Arshad ki chai</li></a>
-                    <a href="order.html"><li>Juice peelo Mosambi ka</li></a>
-                    <a href="order.html"><li>Pathan ka kehva</li></a>
-                    <a href="order.html"><li>balochia di Chaai</li></a>
-                    <a href="order.html"><li>Khaito ka Taza Salad</li></a>
-                    <a href="order.html"><li>Russian Pink salad</li></a>
-                    <a href="order.html"><li>Kha lo beta chatni</li></a>
-                </div>
-            </ol>
-      </div>
+    <div class="menu-container">
+        <a href="landingpage.html" class="back-btn">← Back to Home</a>
+        
+        <div class="category">
+            <h2>🥗 STARTERS</h2>
+            <div class="menu-items">
+                <a href="order.html" class="menu-item">Traditional Pakistani Soup</a>
+                <a href="order.html" class="menu-item">Crispy Papadum</a>
+                <a href="order.html" class="menu-item">Spiced Tea (Chai)</a>
+                <a href="order.html" class="menu-item">Chef's Special Appetizer</a>
+                <a href="order.html" class="menu-item">Samosas (Vegetable/Meat)</a>
+                <a href="order.html" class="menu-item">Mixed Pakoras Platter</a>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>🍲 KARAHI SPECIALTIES</h2>
+            <div class="menu-items">
+                <a href="order.html" class="menu-item">Chicken Shahi Karahi</a>
+                <a href="order.html" class="menu-item">Chicken White Karahi</a>
+                <a href="order.html" class="menu-item">Chicken Achari Karahi</a>
+                <a href="order.html" class="menu-item">Chicken Makhni Karahi</a>
+                <a href="order.html" class="menu-item">Mutton Karahi</a>
+                <a href="order.html" class="menu-item">Mutton White Karahi</a>
+                <a href="order.html" class="menu-item">Mutton Shahi Karahi</a>
+                <a href="order.html" class="menu-item">Fish White Karahi</a>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>🍚 RICE DELICACIES</h2>
+            <div class="menu-items">
+                <a href="order.html" class="menu-item">Chicken Biryani</a>
+                <a href="order.html" class="menu-item">Chicken Aloo Biryani</a>
+                <a href="order.html" class="menu-item">Mutton Biryani</a>
+                <a href="order.html" class="menu-item">Mutton Pulao</a>
+                <a href="order.html" class="menu-item">Beef Biryani</a>
+                <a href="order.html" class="menu-item">Beef Pulao</a>
+                <a href="order.html" class="menu-item">Pakistani Basmati Rice</a>
+                <a href="order.html" class="menu-item">Vegetable Rice</a>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>🔥 BARBECUE</h2>
+            <div class="menu-items">
+                <a href="order.html" class="menu-item">Chicken Shawarma</a>
+                <a href="order.html" class="menu-item">Chicken Roll</a>
+                <a href="order.html" class="menu-item">Chicken Tikka</a>
+                <a href="order.html" class="menu-item">Seekh Kabab</a>
+                <a href="order.html" class="menu-item">Mutton Chop</a>
+                <a href="order.html" class="menu-item">Katakat</a>
+                <a href="order.html" class="menu-item">Gola Kabab</a>
+                <a href="order.html" class="menu-item">Malai Boti</a>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>🍔 FAST FOOD</h2>
+            <div class="menu-items">
+                <a href="order.html" class="menu-item">Chicken Burger</a>
+                <a href="order.html" class="menu-item">Zinger Burger</a>
+                <a href="order.html" class="menu-item">Zinger Roll</a>
+                <a href="order.html" class="menu-item">Club Sandwiches</a>
+                <a href="order.html" class="menu-item">French Fries</a>
+                <a href="order.html" class="menu-item">Chicken Nuggets</a>
+                <a href="order.html" class="menu-item">Pizza Fries</a>
+                <a href="order.html" class="menu-item">Special Burger</a>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>🥖 NAAN & BREAD</h2>
+            <div class="menu-items">
+                <a href="order.html" class="menu-item">Sada Roti</a>
+                <a href="order.html" class="menu-item">Sada Naan</a>
+                <a href="order.html" class="menu-item">Roghni Naan</a>
+                <a href="order.html" class="menu-item">Chapati</a>
+                <a href="order.html" class="menu-item">Chicken Tikka Naan</a>
+                <a href="order.html" class="menu-item">Butter Naan</a>
+                <a href="order.html" class="menu-item">Tandoori Naan</a>
+                <a href="order.html" class="menu-item">Garlic Naan</a>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>🍰 DESSERTS</h2>
+            <div class="menu-items">
+                <a href="order.html" class="menu-item">Gajar Ka Halwa</a>
+                <a href="order.html" class="menu-item">Plain Kheer</a>
+                <a href="order.html" class="menu-item">Shahi Kheer</a>
+                <a href="order.html" class="menu-item">Shahi Tukray</a>
+                <a href="order.html" class="menu-item">Rasmalai</a>
+                <a href="order.html" class="menu-item">Rabri</a>
+                <a href="order.html" class="menu-item">Doodh Dulari</a>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>🥤 BEVERAGES & EXTRAS</h2>
+            <div class="menu-items">
+                <a href="order.html" class="menu-item">Fresh Water Bottle</a>
+                <a href="order.html" class="menu-item">Special Desi Chai</a>
+                <a href="order.html" class="menu-item">Fresh Orange Juice</a>
+                <a href="order.html" class="menu-item">Traditional Kehwa</a>
+                <a href="order.html" class="menu-item">Balochi Chai</a>
+                <a href="order.html" class="menu-item">Fresh Garden Salad</a>
+                <a href="order.html" class="menu-item">Russian Pink Salad</a>
+                <a href="order.html" class="menu-item">Traditional Chatni</a>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="order.html" class="back-btn">🛒 Order Now</a>
+        </div>
     </div>
 </body>
 </html>
