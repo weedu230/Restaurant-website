@@ -59,3 +59,64 @@ p1{
 }
 
 
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+        margin: 15px 0;
+        padding: 0 10px;
+    }
+    
+    p1 {
+        font-size: 1rem;
+        padding: 0 15px;
+        display: block;
+        margin: 10px 0 20px;
+    }
+    
+    .image-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 300px;
+        padding: 10px;
+    }
+    
+    .image-grid img {
+        height: 200px !important;
+    }
+    
+    .button-container {
+        margin: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+        margin: 10px 0;
+    }
+    
+    p1 {
+        font-size: 0.9rem;
+    }
+    
+    .image-grid {
+        max-width: 250px;
+        gap: 15px;
+    }
+    
+    .image-grid img {
+        height: 150px !important;
+    }
+    
+    .button-container {
+        margin: 15px;
+    }
+    
+    .button-container button {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+}

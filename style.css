@@ -321,3 +321,102 @@ p1
 {
     color:black;
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .navigation {
+        padding: 0 10px;
+    }
+    
+    .nav_items {
+        flex-direction: column;
+        gap: 10px;
+        margin-right: 0;
+    }
+    
+    .main_section {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .rotating-image-container {
+        width: 250px !important;
+        height: 200px !important;
+    }
+    
+    .main_content {
+        order: 2;
+    }
+    
+    .main_image {
+        order: 1;
+    }
+    
+    .grid {
+        grid-template-areas:
+        "I1 I1"
+        "I2 I3"
+        "I4 I5"
+        "I6 I7" !important;
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .icon-container {
+        justify-content: center;
+    }
+    
+    .voucher-bar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+        text-align: center;
+    }
+    
+    .voucher-bar span {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    .rotating-image-container {
+        width: 200px !important;
+        height: 150px !important;
+    }
+    
+    .main_content h1 {
+        font-size: clamp(1.5rem, 6vw, 2.5rem) !important;
+    }
+    
+    .grid {
+        grid-template-areas:
+        "I1"
+        "I2"
+        "I3"
+        "I4"
+        "I5"
+        "I6"
+        "I7" !important;
+        gap: 15px;
+    }
+    
+    .nav_items {
+        gap: 5px;
+    }
+    
+    .nav_items button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}

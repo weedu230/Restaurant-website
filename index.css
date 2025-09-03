@@ -80,3 +80,57 @@ input {
 .form-options a:hover {
     color: #ff4500; 
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 20px;
+    }
+    
+    body {
+        padding: 10px;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .login-header h1 {
+        font-size: 20px;
+    }
+    
+    .login-header p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+        margin: 10px auto;
+    }
+    
+    .login-header h1 {
+        font-size: 18px;
+    }
+    
+    input {
+        padding: 8px;
+        font-size: 12px;
+    }
+    
+    .btn-group button {
+        padding: 8px;
+        font-size: 14px;
+    }
+    
+    .form-options {
+        font-size: 11px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+}
